@@ -1,0 +1,3 @@
+In unix (Linux, Mac OS X, BSD etc) systems, ports less than 1024 can not be bound to by normal users, only the root user can bind to those ports.
+
+To get around this, you could run your python application as root (by using sudo), however this is not preferable. Is it possible instead to get your Flask application to talk to localhost on a higher port, say 2525? You would then need to modify the command you are using to start the smtp server to bind on port 2525 rather than 25.
