@@ -1,5 +1,5 @@
-from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
-
+#from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 class webServerHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
 		try:
@@ -7,9 +7,9 @@ class webServerHandler(BaseHTTPRequestHandler):
 				self.send_response(200)
 				self.send_header('Content-type', 'text/html')
 				self.end_headers()
-				message = ""
-				message += "<html><body>Hello!\n</body></html>"
-				message += "<html><body>\nFuck you!</body></html>"
+				message = b""
+				#message += b"<html><body>Hello!\nHow are you On9 Ben</html>"
+				message += b"<div>Hello!</div><div>How are you On9 Ben</div>"
 				self.wfile.write(message)
 				print (message)
 				return
